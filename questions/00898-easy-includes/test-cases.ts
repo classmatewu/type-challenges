@@ -18,3 +18,9 @@ type cases = [
   Expect<Equal<Includes<[null], undefined>, false>>,
   Expect<Equal<Includes<[undefined], null>, false>>,
 ]
+
+// type Test = Includes<[boolean, 2, 3, 5, 6, 7], false>
+
+type Tuple = [boolean, 2, 3, 5, 6, 7, {}]
+type Union = Tuple[number]
+type isTrue = { a: 'A' } extends Union ? true : false
